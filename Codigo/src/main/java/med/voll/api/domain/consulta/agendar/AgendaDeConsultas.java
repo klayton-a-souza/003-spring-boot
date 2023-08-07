@@ -1,7 +1,9 @@
-package med.voll.api.domain.consulta;
+package med.voll.api.domain.consulta.agendar;
 
 import med.voll.api.domain.ValidacaoException;
-import med.voll.api.domain.consulta.validacoes.ValidadorAgendamentoDeConsulta;
+import med.voll.api.domain.consulta.Consulta;
+import med.voll.api.domain.consulta.ConsultaRepository;
+import med.voll.api.domain.consulta.validacoes.agendar.ValidadorAgendamentoDeConsulta;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.MedicoRepository;
 import med.voll.api.domain.paciente.PacienteRepository;

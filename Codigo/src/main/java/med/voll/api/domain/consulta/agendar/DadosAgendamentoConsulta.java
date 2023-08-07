@@ -1,4 +1,4 @@
-package med.voll.api.domain.consulta;
+package med.voll.api.domain.consulta.agendar;
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;

@@ -1,7 +1,7 @@
-package med.voll.api.domain.consulta.validacoes;
+package med.voll.api.domain.consulta.validacoes.agendar;
 
 import med.voll.api.domain.ValidacaoException;
-import med.voll.api.domain.consulta.DadosAgendamentoConsulta;
+import med.voll.api.domain.consulta.agendar.DadosAgendamentoConsulta;
 import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;
