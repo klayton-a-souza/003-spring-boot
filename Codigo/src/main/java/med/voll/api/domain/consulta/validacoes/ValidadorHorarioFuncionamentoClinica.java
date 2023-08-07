@@ -7,7 +7,7 @@ import java.time.DayOfWeek;
 
 public class ValidadorHorarioFuncionamentoClinica {
 
-    public void validarAgendamento(DadosAgendamentoConsulta dados){
+    public void validar(DadosAgendamentoConsulta dados){
 
         var dataConsulta = dados.data();
 
