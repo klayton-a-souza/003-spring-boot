@@ -6,7 +6,7 @@ import med.voll.api.domain.consulta.DadosAgendamentoConsulta;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class ValidadorHorarioAntecedencia {
+public class ValidadorHorarioAntecedencia implements ValidadorAgendamentooDeConsulta{
 
     public void validar(DadosAgendamentoConsulta dados){
 
