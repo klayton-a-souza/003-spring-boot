@@ -31,4 +31,17 @@ public class Consulta {
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
     private LocalDateTime data;
+
+    private Boolean ativo = true;
+
+    public Consulta(DadosCadastrConsulta dados) {
+        this.ativo = true;
+        this.medico = dados.medico();
+        this.paciente = dados.paciente();
+        this.data = dados.data();
+    }
+
+    public void excluir() {
+        this.ativo = false;
+    }
 }

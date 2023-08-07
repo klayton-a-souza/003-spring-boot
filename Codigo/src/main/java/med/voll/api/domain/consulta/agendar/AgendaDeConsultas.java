@@ -3,6 +3,7 @@ package med.voll.api.domain.consulta.agendar;
 import med.voll.api.domain.ValidacaoException;
 import med.voll.api.domain.consulta.Consulta;
 import med.voll.api.domain.consulta.ConsultaRepository;
+import med.voll.api.domain.consulta.DadosCadastrConsulta;
 import med.voll.api.domain.consulta.validacoes.agendar.ValidadorAgendamentoDeConsulta;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.MedicoRepository;
@@ -45,8 +46,9 @@ public class AgendaDeConsultas {
         }
         var paciente = pacienteRepository.getReferenceById(dados.idPaciente());
 
+        var novaConsulta = new DadosCadastrConsulta(null,medico,paciente,dados.data());
 
-        var consulta = new Consulta(null,medico,paciente,dados.data());
+        var consulta = new Consulta(novaConsulta);
         consultaRepository.save(consulta);
 
         return new DadosDetalhamentoConsulta(consulta);

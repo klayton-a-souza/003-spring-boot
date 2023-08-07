@@ -1,6 +1,7 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
+import med.voll.api.domain.consulta.ConsultaRepository;
 import med.voll.api.domain.consulta.agendar.AgendaDeConsultas;
 import med.voll.api.domain.consulta.agendar.DadosAgendamentoConsulta;
 import med.voll.api.domain.consulta.cancelar.CancelarConsulta;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("consultas")
 public class ConsultaController {
 
+
+    @Autowired
+    private ConsultaRepository consultaRepository;
 
     @Autowired
     private AgendaDeConsultas agenda;
@@ -33,7 +37,9 @@ public class ConsultaController {
     @Transactional
     public ResponseEntity cancelar(@RequestBody @Valid DadosCancelamentoConsulta dados) {
         var dto = cancelar.cancelar(dados);
-        return ResponseEntity.ok(dto);
+        var consulta = consultaRepository.getReferenceById(dados.idConsulta());
+        consulta.excluir();
+        return ResponseEntity.noContent().build();
     }
 
 
